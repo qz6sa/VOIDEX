@@ -1,14 +1,13 @@
-# VOIDEX Testing Guide / دليل التجربة
+# VOIDEX Testing Guide
 
 **Developer:** Sanad.CodeX
 
 ---
 
-## ⚠️ Important / مهم
+## ⚠️ Important
 **Only test on websites you own or have permission to test!**
-**اختبر فقط على المواقع التي تملكها أو لديك إذن باختبارها!**
 
-## Safe Testing Environments / بيئات اختبار آمنة
+## Safe Testing Environments
 
 ### 1. Local Testing Sites
 - **DVWA (Damn Vulnerable Web Application)**: http://www.dvwa.co.uk/
@@ -21,7 +20,7 @@
 - **TryHackMe**: https://tryhackme.com/
 - **PentesterLab**: https://pentesterlab.com/
 
-## Quick Test Examples / أمثلة سريعة
+## Quick Test Examples
 
 ### Test 1: SQL Injection Scanner
 ```bash
@@ -74,7 +73,7 @@ python main.py login --url "http://testsite.com/login" --usernames wordlists/use
 python main.py login --url "http://testsite.com/login" --username admin --passwords wordlists/passwords.txt --delay 1.0
 ```
 
-## Testing Your Own Local Server / اختبار سيرفر محلي
+## Testing Your Own Local Server
 
 ### Setup a Local Test Environment:
 
@@ -96,7 +95,7 @@ $result = mysqli_query($conn, $query);
 python main.py sqli --url "http://localhost/test.php?id=1"
 ```
 
-## Command Options / خيارات الأوامر
+## Command Options
 
 ### Global Options:
 - `-c, --config`: Path to config file (default: config.yaml)
@@ -128,24 +127,19 @@ python main.py dirbrute --help
 python main.py login --help
 ```
 
-## Tips / نصائح
+## Tips
 
 1. **Start with subdomain enumeration** - It's safe and doesn't modify anything
-   ابدأ بالبحث عن النطاقات الفرعية - آمن ولا يعدل شيء
 
 2. **Use custom wordlists** - The default ones are small
-   استخدم قوائم كلمات مخصصة - الافتراضية صغيرة
 
 3. **Save results** - Always use `-o results.json` to save findings
-   احفظ النتائج - استخدم دائماً `-o results.json` لحفظ الاكتشافات
 
 4. **Adjust delays** - Use `--delay` to avoid detection or rate limiting
-   اضبط التأخير - استخدم `--delay` لتجنب الكشف أو الحد من المعدل
 
 5. **Check config.yaml** - Customize timeouts, threads, user agents
-   تحقق من config.yaml - خصص المهلات والخيوط ووكلاء المستخدم
 
-## Reading Results / قراءة النتائج
+## Reading Results
 
 Results are saved in JSON format:
 
@@ -163,7 +157,7 @@ Results are saved in JSON format:
 }
 ```
 
-## Troubleshooting / حل المشاكل
+## Troubleshooting
 
 ### Issue: Module not found
 ```bash
@@ -179,24 +173,18 @@ Edit `config.yaml` and increase `timeout: 20`
 ### Issue: Too slow
 Edit `config.yaml` and increase `max_concurrent: 100`
 
-## ⚠️ Legal Warning / تحذير قانوني
+## ⚠️ Legal Warning
 
 ```
-استخدام هذه الأداة على أهداف بدون إذن غير قانوني!
 Using this tool on targets without permission is ILLEGAL!
 
 - Test only on your own systems
 - Get written permission before testing
 - Follow all local and international laws
 - Use responsibly and ethically
-
-اختبر فقط على أنظمتك الخاصة
-احصل على إذن كتابي قبل الاختبار
-اتبع جميع القوانين المحلية والدولية
-استخدم بمسؤولية وأخلاق
 ```
 
-## Example Session / جلسة مثال
+## Example Session
 
 ```bash
 # Step 1: Scan for subdomains
@@ -212,7 +200,7 @@ python main.py sqli --url "https://admin.target.com/login.php?user=admin" -o sql
 python main.py xss --url "https://admin.target.com/search.php" --forms -o xss.json
 ```
 
-## Need Help? / تحتاج مساعدة؟
+## Need Help?
 
 ```bash
 # General help
@@ -227,5 +215,14 @@ python main.py login --help
 ```
 
 ---
+
 **Remember: With great power comes great responsibility!**
-**تذكر: مع القوة العظيمة تأتي المسؤولية العظيمة!**
+
+---
+
+**Developer:** Sanad.CodeX  
+**Project:** VOIDEX - Web Penetration Testing Toolkit  
+**Version:** 1.0.0  
+**Purpose:** Educational and Authorized Testing Only
+
+© 2025 Sanad.CodeX - All Rights Reserved
