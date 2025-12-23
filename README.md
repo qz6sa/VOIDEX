@@ -67,22 +67,79 @@ By using this tool, you agree to use it only on:
 ### Requirements
 - Python 3.8 or higher
 - pip (Python package manager)
+- git (optional, for cloning)
 
-### Setup
+### Quick Setup
 
-1. Clone or download VOIDEX:
+#### Method 1: Clone from GitHub (Recommended)
+
 ```bash
+# Clone the repository
+git clone https://github.com/qz6sa/VOIDEX
 cd VOIDEX
+
+# Create a virtual environment (recommended)
+python3 -m venv venv
+
+# Activate the virtual environment
+# On Linux/Mac:
+source venv/bin/activate
+# On Windows:
+venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Verify installation
+python main.py --help
 ```
 
-2. Install dependencies:
+#### Method 2: Manual Installation
+
+1. **Download VOIDEX:**
+   - Download the ZIP file from GitHub
+   - Extract to your desired location
+   - Navigate to the folder
+
+2. **Create Virtual Environment (Recommended):**
+```bash
+cd VOIDEX
+python3 -m venv venv
+source venv/bin/activate  # Linux/Mac
+# or
+venv\Scripts\activate     # Windows
+```
+
+3. **Install Dependencies:**
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Verify installation:
+4. **Verify Installation:**
 ```bash
 python main.py --help
+```
+
+### Why Use Virtual Environment?
+
+A virtual environment isolates VOIDEX dependencies from your system Python packages:
+- ✅ Prevents conflicts with other projects
+- ✅ Easy to manage and remove
+- ✅ Recommended for Python projects
+- ✅ Solves "externally-managed-environment" errors on modern systems
+
+### First Run
+
+After installation, test VOIDEX with:
+```bash
+# Display version
+python main.py --version
+
+# Show available tools
+python main.py --help
+
+# Test on a safe target
+python main.py sqli --url "http://testphp.vulnweb.com/artists.php?artist=1"
 ```
 
 ## 🎯 Usage
